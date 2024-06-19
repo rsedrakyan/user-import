@@ -35,3 +35,13 @@ en:
       user:
         password_complexity: must contain at least one lowercase letter, one uppercase letter, and one digit
         password_repeating: cannot contain three repeating characters in a row
+  users:
+    upload:
+      button: Upload
+      errors:
+        file_read_error: The uploaded file could not be read
+        invalid_csv_content: CSV file must contain "name" and "password" columns
+        invalid_csv_file: The uploaded file is not a valid CSV file
+        missing_file: Select a CSV file to upload
+      results: Upload Results
+      title: Upload CSV to import users

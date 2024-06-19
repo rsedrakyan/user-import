@@ -1,0 +1,14 @@
+<h1><%= t('users.upload.title') %></h1>
+
+<%= form_with url: users_upload_path, local: true, multipart: true do |form| %>
+  <% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+  <% end %>
+
+  <%= form.file_field :file, accept: '.csv' %>
+  <%= form.submit t('users.upload.button') %>
+<% end %>
+
+<% if @results %>
+  <h2><%= t('users.upload.results') %></h2>
+<% end %>
