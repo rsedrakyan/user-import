@@ -1,0 +1,137 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2.2
+  Exclude:
+    - bin/**/*
+    - config.ru
+    - db/schema.rb
+    - db/migrate/*.rb
+    - log/**/*
+    - public/**/*
+    - tmp/**/*
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 100
+
+# Allow indented or aligned method call indentation
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Allow `map{ ... }` and `map { ... }`
+Layout/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Naming/VariableNumber:
+  CheckSymbols: false
+
+Rails/SkipsModelValidations:
+  AllowedMethods:
+    - update_all
+    - update_column
+
+# Allow both `{ ... }` and `do ... end` for multiline blocks
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Matz decided not to make frozen string literals enabled by default in ruby 3.
+# This magic comment no longer serves the purpose of preparing the project code to a new ruby
+# version when it becomes enabled by default
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Allow ->(object, ctx) do ... end
+Style/Lambda:
+  Enabled: false
+
+# Allow chaining multiline blocks:
+# l.map{ |a|
+#   a
+# }.map{ |a|
+#   a
+# }
+Style/MultilineBlockChain:
+  Enabled: false
+
+# Allow if/unless after multiline functions to accomodate guard clause cop:
+# func(
+#   "arg"
+# ) if value?
+Style/MultilineIfModifier:
+  Enabled: False
+
+Style/MultilineTernaryOperator:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+# Don't require `.zero?`
+Style/NumericPredicate:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/WordArray:
+  EnforcedStyle: brackets
