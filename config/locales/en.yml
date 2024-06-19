@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      user:
+        password_complexity: must contain at least one lowercase letter, one uppercase letter, and one digit
+        password_repeating: cannot contain three repeating characters in a row
