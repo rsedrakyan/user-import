@@ -16,7 +16,7 @@ class User < ApplicationRecord
       errors.add(:password, I18n.t('errors.messages.user.password_complexity'))
     end
 
-    # Does not contain repeating characters
+    # Do not allow 3 repeating characters in a row
     return unless password.match?(/(.)\1\1/)
 
     errors.add(:password, I18n.t('errors.messages.user.password_repeating'))

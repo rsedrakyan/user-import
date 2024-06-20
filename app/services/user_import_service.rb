@@ -22,12 +22,12 @@ class UserImportService
   def save_user(row)
     name = row['name']&.strip
     password = row['password']&.strip
-    return { status: 'skip' } if name.blank? && password.blank?
+    return { status: :skip } if name.blank? && password.blank?
 
     user = User.new(name:, password:)
-    return { status: 'success' } if user.save
+    return { status: :success } if user.save
 
-    { status: 'error', errors: user.errors.full_messages }
+    { status: :error, errors: user.errors.full_messages }
   end
 
   def validate_csv_file!

@@ -3,7 +3,7 @@ module ApplicationHelper
     content_tag(:ol) do
       results.map do |result|
         status = content_tag(:span, I18n.t("users.upload.results.statuses.#{result[:status]}"))
-        errors = result[:status] == 'error' ? render_errors_list(result[:errors]) : ''
+        errors = result[:status] == :error ? render_errors_list(result[:errors]) : ''
 
         content_tag(:li) do
           status + errors

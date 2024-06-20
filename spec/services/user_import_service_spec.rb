@@ -20,7 +20,7 @@ RSpec.describe UserImportService do
         service = UserImportService.new(valid_file)
         results = service.call!
 
-        expect(results).to include({ status: 'success' })
+        expect(results).to include({ status: :success })
         expect(User.count).to eq(1)
       end
     end
@@ -71,7 +71,7 @@ RSpec.describe UserImportService do
         service = UserImportService.new(file)
         results = service.call!
 
-        expect(results).to include({ status: 'skip' })
+        expect(results).to include({ status: :skip })
       end
     end
 
@@ -86,7 +86,7 @@ RSpec.describe UserImportService do
 
         expect(results).to include(
           a_hash_including(
-            status: 'error',
+            status: :error,
             errors: array_including("Password can't be blank")
           )
         )
