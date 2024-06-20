@@ -43,5 +43,10 @@ en:
         invalid_csv_content: CSV file must contain "name" and "password" columns
         invalid_csv_file: The uploaded file is not a valid CSV file
         missing_file: Select a CSV file to upload
-      results: Upload Results
+      results:
+        statuses:
+          error: Error
+          skip: Skipped (blank row)
+          success: Success
+        title: Upload Results
       title: Upload CSV to import users

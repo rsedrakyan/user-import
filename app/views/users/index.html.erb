@@ -8,7 +8,4 @@
   <%= form.file_field :file, accept: '.csv' %>
   <%= form.submit t('users.upload.button') %>
 <% end %>
-
-<% if @results %>
-  <h2><%= t('users.upload.results') %></h2>
-<% end %>
+<turbo-frame id="results"></turbo-frame>
